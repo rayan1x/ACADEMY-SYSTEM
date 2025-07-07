@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - ACADEMY SYSTEM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            background: #f5f7fa;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .admin-navbar {
+            background: #1882ff;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            height: 48px;
+            box-shadow: 0 2px 8px rgba(24,130,255,0.08);
+            position: relative;
+        }
+        .admin-logo {
+            display: flex;
+            align-items: center;
+            margin-right: 32px;
+        }
+        .admin-logo img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: #fff;
+            margin-right: 8px;
+        }
+        .admin-menu {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
+        }
+        .admin-menu-item {
+            position: relative;
+            padding: 0 7px;
+            font-weight: 600;
+            font-size: 0.95em;
+            cursor: pointer;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            transition: background 0.2s;
+        }
+        .admin-menu-item:hover, .admin-menu-item:focus {
+            background: #156ed6;
+        }
+        .admin-dropdown {
+            display: none;
+            position: absolute;
+            top: 48px;
+            left: 0;
+            background: #fff;
+            color: #222;
+            min-width: 170px;
+            box-shadow: 0 8px 32px rgba(24,130,255,0.13);
+            border-radius: 0 0 12px 12px;
+            z-index: 10;
+            flex-direction: column;
+            font-size: 0.95em;
+        }
+        .admin-menu-item:hover .admin-dropdown {
+            display: flex;
+        }
+        .admin-dropdown a {
+            padding: 14px 22px;
+            color: #222;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s;
+            border-bottom: 1px solid #f0f4fa;
+        }
+        .admin-dropdown a:last-child {
+            border-bottom: none;
+        }
+        .admin-dropdown a:hover {
+            background: #f5f7fa;
+            color: #1882ff;
+        }
+        .admin-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .admin-logout {
+            color: #fff;
+            background: none;
+            border: none;
+            font-size: 0.95em;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s;
+        }
+        .admin-logout:hover {
+            color: #fbb034;
+        }
+        .admin-user {
+            color: #fbb034;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95em;
+        }
+        .admin-user i {
+            color: #fbb034;
+            font-size: 1.2em;
+        }
+        @media (max-width: 900px) {
+            .admin-navbar {flex-direction: column;align-items: flex-start;height:auto;padding:0 4px;}
+            .admin-menu {flex-wrap: wrap;gap:6px;}
+        }
+        @media (max-width: 600px) {
+            .admin-navbar {padding:0 1vw;}
+            .admin-logo img {width:22px;height:22px;}
+            .admin-menu-item {font-size:0.85em;padding:0 2px;height:38px;}
+            .admin-dropdown {top:38px;}
+        }
+        .admin-menu-item.dropdown-right .admin-dropdown,
+        .admin-dropdown.admin-dropdown-right {
+            left: auto;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="admin-navbar">
+        <div class="admin-logo">
+            <img src="logo.jpg" alt="Logo ACADEMY SYSTEM">
+        </div>
+        <div class="admin-menu">
+            <div class="admin-menu-item">Gestion de :
+                <div class="admin-dropdown">
+                    <a href="#">Présence étudiants</a>
+                    <a href="#">Absence étudiants</a>
+                    <a href="#">Présence profs</a>
+                    <a href="#">Absence profs</a>
+                </div>
+            </div>
+            <div class="admin-menu-item">Parents/Activité
+                <div class="admin-dropdown">
+                    <a href="#">Gestion de parents</a>
+                    <a href="#">Gestion de activité</a>
+                </div>
+            </div>
+            <div class="admin-menu-item">Factures
+                <div class="admin-dropdown">
+                    <a href="#">Gestion des étudiants</a>
+                    <a href="#">Gestion des parents</a>
+                </div>
+            </div>
+            <div class="admin-menu-item">Gestion de classe
+                <div class="admin-dropdown">
+                    <a href="#">Groupe</a>
+                    <a href="#">Niveau</a>
+                    <a href="#">Matière</a>
+                    <a href="#">Classe</a>
+                </div>
+            </div>
+            <div class="admin-menu-item">Affectation
+                <div class="admin-dropdown">
+                    <a href="#">Affectation des profs</a>
+                    <a href="#">Affectation des étudiants</a>
+                </div>
+            </div>
+            <div class="admin-menu-item">Rapport
+                <div class="admin-dropdown">
+                    <a href="#">Facturation des absences et présences enfants</a>
+                    <a href="#">Facturation des absences et présences profs</a>
+                    <a href="#">Activité par étudiant</a>
+                </div>
+            </div>
+            <div class="admin-menu-item">Statistique/Historique
+                <div class="admin-dropdown">
+                    <a href="#">Gestion des historiques</a>
+                    <a href="#">Gestion des statistiques</a>
+                </div>
+            </div>
+            <div class="admin-menu-item">Paramètres
+                <div class="admin-dropdown">
+                    <a href="#">Paramètres avancés</a>
+                </div>
+            </div>
+            <div class="admin-menu-item dropdown-right">Notification
+                <div class="admin-dropdown admin-dropdown-right">
+                    <a href="#">Notification par SMS/Email</a>
+                    <a href="#">Notification interne</a>
+                </div>
+            </div>
+        </div>
+        <div class="admin-actions">
+            <button class="admin-logout"><i class="fa fa-lock"></i> Déconnexion</button>
+            <span class="admin-user"><i class="fa fa-user"></i> Nom Utilisateur (Admin)</span>
+        </div>
+    </nav>
+    <!-- Contenu admin ici -->
+</body>
+</html> 

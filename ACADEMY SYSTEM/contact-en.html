@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - ACADEMY SYSTEM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            background: #f5f7fa;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            color: #222;
+        }
+        .contact-container {
+            max-width: 1100px;
+            margin: 48px auto 0 auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.10);
+            padding: 38px 32px 32px 32px;
+            display: flex;
+            gap: 38px;
+            flex-wrap: wrap;
+        }
+        .contact-form {
+            flex: 2 1 340px;
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-title {
+            font-size: 2em;
+            font-weight: 700;
+            color: #2b3a67;
+            margin-bottom: 24px;
+        }
+        .form-row {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 18px;
+        }
+        .form-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .form-label {
+            font-weight: 600;
+            color: #7b2ff2;
+            margin-bottom: 6px;
+            font-size: 1em;
+        }
+        .form-input, .form-textarea {
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: 1.5px solid #e0e7ef;
+            font-size: 1em;
+            outline: none;
+            margin-bottom: 0;
+            transition: border 0.2s;
+        }
+        .form-input:focus, .form-textarea:focus {
+            border: 1.5px solid #7b2ff2;
+        }
+        .form-textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+        .form-submit {
+            background: linear-gradient(90deg, #7b2ff2 0%, #fbb034 100%);
+            color: #fff;
+            border: none;
+            border-radius: 24px;
+            padding: 14px 0;
+            font-size: 1.08em;
+            font-family: inherit;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(123,47,242,0.10);
+            transition: background 0.3s, color 0.2s, transform 0.2s;
+            width: 100%;
+            margin-top: 8px;
+        }
+        .form-submit:hover {
+            background: linear-gradient(90deg, #fbb034 0%, #7b2ff2 100%);
+            color: #222;
+            transform: translateY(-2px) scale(1.04);
+        }
+        .contact-info {
+            flex: 1 1 280px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .info-block {
+            background: #f8fafd;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px rgba(31,38,135,0.07);
+            padding: 22px 18px;
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .info-block i {
+            font-size: 2.2em;
+            color: #7b2ff2;
+            margin-bottom: 8px;
+        }
+        .info-title {
+            font-weight: 700;
+            color: #2b3a67;
+            font-size: 1.13em;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+        .info-text {
+            color: #333;
+            font-size: 1em;
+            text-align: center;
+        }
+        .info-link {
+            color: #7b2ff2;
+            text-decoration: underline;
+            font-weight: 600;
+            font-size: 1em;
+            margin-top: 6px;
+        }
+        @media (max-width: 900px) {
+            .contact-container {flex-direction: column;gap:18px;}
+            .contact-info {flex-direction: row;gap:18px;}
+            .info-block {flex:1;}
+        }
+        @media (max-width: 600px) {
+            .contact-container {padding: 12px 2vw 8px 2vw;}
+            .contact-title {font-size: 1.2em;}
+            .form-row {flex-direction: column;gap:8px;}
+            .contact-info {flex-direction: column;gap:12px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-container">
+        <form class="contact-form">
+            <div class="contact-title">Contact Form</div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label" for="fullname">Full Name *</label>
+                    <input class="form-input" type="text" id="fullname" name="fullname" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="company">Company</label>
+                    <input class="form-input" type="text" id="company" name="company">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label" for="phone">Phone *</label>
+                    <input class="form-input" type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="mobile">Mobile</label>
+                    <input class="form-input" type="tel" id="mobile" name="mobile">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label" for="email">Email *</label>
+                    <input class="form-input" type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="city">City / Country</label>
+                    <input class="form-input" type="text" id="city" name="city">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group" style="flex:1;">
+                    <label class="form-label" for="subject">Subject</label>
+                    <input class="form-input" type="text" id="subject" name="subject">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group" style="flex:1;">
+                    <label class="form-label" for="message">Message *</label>
+                    <textarea class="form-textarea" id="message" name="message" required></textarea>
+                </div>
+            </div>
+            <button class="form-submit" type="submit">Send</button>
+        </form>
+        <div class="contact-info">
+            <div class="info-block">
+                <i class="fa fa-map-marker-alt"></i>
+                <div class="info-title">ACADEMY SYSTEM</div>
+                <div class="info-text">123, Academy Avenue, 2nd Floor<br> Tetouan, Morocco</div>
+                <div class="info-text" style="margin-top:8px;font-size:0.98em;"><b>Opening hours:</b><br>Monday to Friday: 09:00 to 18:00<br>Saturday: 09:00 to 12:00</div>
+            </div>
+            <div class="info-block">
+                <i class="fa fa-phone-volume"></i>
+                <div class="info-title">Call Us</div>
+                <div class="info-text"><a href="tel:+212522505200" class="info-link">+212 522 50 52 00</a></div>
+            </div>
+            <div class="info-block">
+                <i class="fa fa-life-ring"></i>
+                <div class="info-title">Already a client?</div>
+                <div class="info-text"><a href="#" class="info-link">How to get support?</a></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

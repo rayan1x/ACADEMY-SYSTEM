@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACADEMY SYSTEM - Accueil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --main-blue: #2b3a67;
+            --main-violet: #7b2ff2;
+            --main-gold: #fbb034;
+            --main-pink: #f50087;
+            --main-bg: #f5f7fa;
+            --main-white: #fff;
+            --main-grey: #e0e7ef;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--main-bg);
+            color: #222;
+        }
+        .topbar {
+            background: var(--main-white);
+            font-size: 0.98em;
+            color: #444;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 6px 36px 6px 0;
+            border-bottom: 1px solid #eee;
+            z-index: 100;
+        }
+        .topbar a {
+            color: #444;
+            text-decoration: none;
+            margin-left: 22px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .topbar a:hover {
+            color: var(--main-violet);
+        }
+        .header {
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 99;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 48px 14px 48px;
+            box-shadow: 0 2px 16px rgba(31,38,135,0.07);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo-card {
+            background: var(--main-white);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.13);
+            padding: 10px 18px 10px 10px;
+            display: flex;
+            align-items: center;
+            margin-right: 18px;
+        }
+        .logo-img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 14px;
+            background: #fff;
+            border: 3px solid var(--main-violet);
+            box-shadow: 0 2px 12px rgba(31,38,135,0.10);
+        }
+        .site-title {
+            font-size: 1.7em;
+            font-weight: 700;
+            color: var(--main-violet);
+            letter-spacing: 1px;
+            margin-left: 18px;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        nav a {
+            color: #222;
+            text-decoration: none;
+            margin-left: 32px;
+            font-weight: 600;
+            font-size: 1.08em;
+            padding: 8px 18px;
+            border-radius: 8px;
+            transition: color 0.2s, background 0.2s;
+        }
+        nav a:hover {
+            background: var(--main-grey);
+            color: var(--main-violet);
+        }
+        nav .promo-link {
+            background: linear-gradient(90deg, var(--main-gold) 0%, var(--main-pink) 100%);
+            color: #fff !important;
+            font-weight: 700;
+            border-radius: 18px;
+            margin-left: 32px;
+            box-shadow: 0 2px 8px rgba(251,176,52,0.10);
+            transition: background 0.2s, color 0.2s;
+        }
+        nav .promo-link:hover {
+            background: linear-gradient(90deg, var(--main-pink) 0%, var(--main-gold) 100%);
+            color: #fff;
+        }
+        .promo-bar {
+            background: linear-gradient(90deg, var(--main-pink) 0%, var(--main-gold) 100%);
+            color: #fff;
+            font-size: 1.13em;
+            font-weight: 600;
+            text-align: center;
+            padding: 12px 0 12px 0;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .promo-bar i {
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+        .promo-bar a {
+            color: #fff;
+            text-decoration: underline;
+            font-weight: 700;
+            margin-left: 8px;
+        }
+        .hero {
+            background: linear-gradient(120deg, #2b3a67 0%, #7b2ff2 100%);
+            background-size: 200% 200%;
+            animation: heroGradientMove 8s ease-in-out infinite alternate;
+            color: #fff;
+            padding: 70px 0 70px 0;
+            min-height: 370px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            position: relative;
+        }
+        @keyframes heroGradientMove {
+            0% {background-position: 0% 50%;}
+            100% {background-position: 100% 50%;}
+        }
+        .hero-content {
+            max-width: 650px;
+            margin-left: 10vw;
+            background: rgba(255,255,255,0.07);
+            border-radius: 18px;
+            padding: 38px 38px 32px 38px;
+            box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.10);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 48px;
+        }
+        .hero-title {
+            font-size: 2.7em;
+            font-weight: 700;
+            margin-bottom: 22px;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .hero-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 36px 0;
+        }
+        .hero-list li {
+            font-size: 1.18em;
+            margin-bottom: 13px;
+            display: flex;
+            align-items: center;
+        }
+        .hero-list i {
+            color: var(--main-gold);
+            margin-right: 14px;
+            font-size: 1.18em;
+            background: #fff2;
+            border-radius: 50%;
+            padding: 6px;
+        }
+        .hero-btn {
+            background: linear-gradient(90deg, var(--main-violet) 0%, var(--main-gold) 100%);
+            color: #fff;
+            border: none;
+            border-radius: 24px;
+            padding: 15px 44px;
+            font-size: 1.18em;
+            font-family: inherit;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 2px 12px rgba(31, 38, 135, 0.10);
+            transition: background 0.3s, color 0.2s, transform 0.2s;
+        }
+        .hero-btn:hover {
+            background: linear-gradient(90deg, var(--main-gold) 0%, var(--main-violet) 100%);
+            color: #222;
+            transform: translateY(-2px) scale(1.04);
+        }
+        .hero-btn-main {
+            font-size: 1.25em;
+            padding: 18px 54px;
+            box-shadow: 0 4px 24px rgba(123,47,242,0.13);
+            transition: background 0.3s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+        }
+        .hero-btn-main:hover {
+            background: linear-gradient(90deg, var(--main-gold) 0%, var(--main-violet) 100%) !important;
+            color: #fff !important;
+            transform: translateY(-4px) scale(1.07);
+            box-shadow:0 8px 32px rgba(251,176,52,0.18);
+        }
+        footer {
+            background: var(--main-blue);
+            color: #fff;
+            text-align: center;
+            padding: 24px 0 12px 0;
+            font-size: 1em;
+            margin-top: 40px;
+        }
+        footer a {
+            color: #fbb034;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 500;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 900px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 14px 16px;
+            }
+            nav {
+                margin-top: 12px;
+            }
+            .hero-content {
+                flex-direction: column;
+                gap: 24px;
+            }
+            .hero-illustration {
+                margin-top: 24px;
+            }
+        }
+        @media (max-width: 600px) {
+            .header {
+                padding: 10px 2vw;
+            }
+            .logo-img {
+                width: 54px;
+                height: 54px;
+            }
+            .site-title {
+                font-size: 1.1em;
+            }
+            nav a {
+                margin-left: 10px;
+                font-size: 0.98em;
+                padding: 6px 10px;
+            }
+            .hero-title {
+                font-size: 1.2em;
+            }
+            .hero-content {
+                padding: 18px 2vw;
+            }
+        }
+        .pricing-section {
+            background: var(--main-grey);
+            padding: 60px 0 40px 0;
+            text-align: center;
+        }
+        .pricing-title {
+            font-size: 2em;
+            color: var(--main-blue);
+            font-weight: 700;
+            margin-bottom: 38px;
+            letter-spacing: 1px;
+        }
+        .pricing-comparison {
+            overflow-x: auto;
+            margin: 32px auto 48px auto;
+            max-width: 1100px;
+        }
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .pricing-card {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.10);
+            padding: 36px 28px 32px 28px;
+            min-width: 290px;
+            max-width: 340px;
+            flex: 1 1 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            transition: transform 0.18s, box-shadow 0.18s;
+        }
+        .pricing-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.16);
+        }
+        .pricing-header {
+            font-size: 1.35em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+        .pricing-header.basic { color: var(--main-blue); }
+        .pricing-header.pro { color: var(--main-violet); }
+        .pricing-header.premium { color: var(--main-gold); }
+        .pricing-desc {
+            color: #666;
+            font-size: 1em;
+            margin-bottom: 18px;
+        }
+        .pricing-price {
+            font-size: 1em;
+            color: #888;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: #bbb;
+            font-size: 0.98em;
+        }
+        .badge-reduc {
+            background: #d4ffb2;
+            color: #3a7d1c;
+            font-weight: 700;
+            border-radius: 8px;
+            padding: 2px 10px;
+            font-size: 0.98em;
+            margin-left: 4px;
+        }
+        .pricing-main-price {
+            font-size: 2.2em;
+            font-weight: 700;
+            color: var(--main-violet);
+            margin-bottom: 10px;
+        }
+        .pricing-main-price .per {
+            font-size: 0.6em;
+            color: #888;
+            font-weight: 500;
+        }
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 22px 0;
+            text-align: left;
+            width: 100%;
+        }
+        .pricing-features li {
+            font-size: 1.05em;
+            color: #333;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        .pricing-features i {
+            color: var(--main-gold);
+            margin-right: 10px;
+            font-size: 1.1em;
+        }
+        .pricing-btn {
+            background: linear-gradient(90deg, var(--main-violet) 0%, var(--main-gold) 100%);
+            color: #fff;
+            border: none;
+            border-radius: 24px;
+            padding: 12px 38px;
+            font-size: 1.08em;
+            font-family: inherit;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(31, 38, 135, 0.10);
+            transition: background 0.3s, color 0.2s, transform 0.2s;
+        }
+        .pricing-btn:hover {
+            background: linear-gradient(90deg, var(--main-gold) 0%, var(--main-violet) 100%);
+            color: #222;
+            transform: translateY(-2px) scale(1.04);
+        }
+        .badge-popular {
+            position: absolute;
+            top: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--main-violet);
+            color: #fff;
+            font-size: 0.98em;
+            font-weight: 700;
+            padding: 5px 18px;
+            border-radius: 18px;
+            box-shadow: 0 2px 8px rgba(123,47,242,0.10);
+            letter-spacing: 1px;
+            z-index: 2;
+        }
+        .pricing-card.popular {
+            border: 2.5px solid var(--main-violet);
+            z-index: 1;
+            box-shadow: 0 8px 32px 0 rgba(123,47,242,0.10);
+            transform: scale(1.04);
+        }
+        @media (max-width: 1000px) {
+            .pricing-cards {
+                flex-direction: column;
+                align-items: center;
+                gap: 38px;
+            }
+        }
+        @media (max-width: 600px) {
+            .pricing-section {
+                padding: 32px 0 18px 0;
+            }
+            .pricing-title {
+                font-size: 1.2em;
+            }
+            .pricing-card {
+                min-width: 90vw;
+                max-width: 98vw;
+                padding: 22px 8px 18px 8px;
+            }
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .testimonials-section {
+            background: #f8fafd;
+            padding: 60px 0 40px 0;
+            text-align: center;
+        }
+        .testimonials-title {
+            font-size: 2em;
+            color: var(--main-violet);
+            font-weight: 700;
+            margin-bottom: 38px;
+            letter-spacing: 1px;
+        }
+        .testimonials-cards {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .testimonial-card {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.10);
+            padding: 28px 22px 22px 22px;
+            min-width: 260px;
+            max-width: 320px;
+            flex: 1 1 260px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            transition: transform 0.18s, box-shadow 0.18s;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.16);
+        }
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .testimonial-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            box-shadow: 0 2px 8px rgba(31,38,135,0.10);
+        }
+        .testimonial-name {
+            font-weight: 700;
+            color: var(--main-blue);
+            font-size: 1.08em;
+        }
+        .testimonial-date {
+            font-size: 0.95em;
+            color: #888;
+        }
+        .testimonial-google {
+            width: 28px;
+            height: 28px;
+            margin-left: auto;
+            border-radius: 6px;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(31,38,135,0.07);
+        }
+        .testimonial-stars {
+            color: #fbb034;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+        .testimonial-text {
+            color: #333;
+            font-size: 1.05em;
+            margin-bottom: 0;
+            text-align: left;
+        }
+        @media (max-width: 1000px) {
+            .testimonials-cards {
+                flex-direction: column;
+                align-items: center;
+                gap: 28px;
+            }
+        }
+        @media (max-width: 600px) {
+            .testimonials-section {
+                padding: 32px 0 18px 0;
+            }
+            .testimonials-title {
+                font-size: 1.2em;
+            }
+            .testimonial-card {
+                min-width: 90vw;
+                max-width: 98vw;
+                padding: 16px 6px 12px 6px;
+            }
+        }
+        .partners-section {
+            background: #fff;
+            padding: 56px 0 40px 0;
+            text-align: center;
+        }
+        .partners-title {
+            font-size: 2em;
+            color: var(--main-gold);
+            font-weight: 700;
+            margin-bottom: 38px;
+            letter-spacing: 1px;
+        }
+        .partners-desc {
+            color: #555;
+            font-size: 1.08em;
+            max-width: 600px;
+            margin: 0 auto 32px auto;
+        }
+        .partners-cards {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .partner-card {
+            background: var(--main-grey);
+            border-radius: 18px;
+            box-shadow: 0 2px 12px 0 rgba(31, 38, 135, 0.08);
+            padding: 28px 18px 18px 18px;
+            min-width: 170px;
+            max-width: 200px;
+            flex: 1 1 170px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            transition: transform 0.18s, box-shadow 0.18s;
+        }
+        .partner-card:hover {
+            transform: translateY(-6px) scale(1.04);
+            box-shadow: 0 8px 32px 0 rgba(251,176,52,0.13);
+        }
+        .partner-logo {
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+            border-radius: 12px;
+            background: #fff;
+            margin-bottom: 14px;
+            box-shadow: 0 2px 8px rgba(251,176,52,0.10);
+            border: 2px solid #fbb03422;
+        }
+        .partner-name {
+            font-weight: 700;
+            color: var(--main-blue);
+            font-size: 1.08em;
+            margin-bottom: 4px;
+        }
+        .partner-city {
+            font-size: 0.98em;
+            color: #888;
+        }
+        @media (max-width: 900px) {
+            .partners-cards {
+                flex-direction: column;
+                align-items: center;
+                gap: 28px;
+            }
+        }
+        @media (max-width: 600px) {
+            .partners-section {
+                padding: 32px 0 18px 0;
+            }
+            .partners-title {
+                font-size: 1.2em;
+            }
+            .partner-card {
+                min-width: 80vw;
+                max-width: 95vw;
+                padding: 16px 6px 12px 6px;
+            }
+        }
+        .footer-main {
+            background: #232d3b;
+            color: #fff;
+            font-size: 1em;
+            margin-top: 0;
+            padding-top: 0;
+        }
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 38px 8vw 18px 8vw;
+            border-bottom: 1px solid #2b3a67;
+            flex-wrap: wrap;
+        }
+        .footer-legal {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            max-width: 480px;
+        }
+        .footer-logo {
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+            border-radius: 12px;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(123,47,242,0.10);
+            border: 2px solid #7b2ff2;
+        }
+        .footer-legal-text {
+            font-size: 0.98em;
+            color: #cfd8e3;
+            line-height: 1.6;
+        }
+        .footer-payments {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+        }
+        .footer-payments span {
+            font-size: 0.98em;
+            color: #cfd8e3;
+            margin-bottom: 4px;
+        }
+        .footer-pay-icons i {
+            font-size: 2em;
+            margin-left: 10px;
+            color: #fbb034;
+            vertical-align: middle;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            padding: 38px 8vw 18px 8vw;
+            flex-wrap: wrap;
+            background: #263146;
+        }
+        .footer-col {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            min-width: 160px;
+            max-width: 220px;
+            margin-bottom: 18px;
+        }
+        .footer-title {
+            font-size: 1.08em;
+            color: #fbb034;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .footer-col a {
+            color: #cfd8e3;
+            text-decoration: none;
+            margin-bottom: 8px;
+            font-size: 0.98em;
+            transition: color 0.2s;
+        }
+        .footer-col a:hover {
+            color: #7b2ff2;
+            text-decoration: underline;
+        }
+        .newsletter-col {
+            min-width: 220px;
+            max-width: 260px;
+        }
+        .footer-news-desc {
+            color: #cfd8e3;
+            font-size: 0.98em;
+            margin-bottom: 8px;
+        }
+        .footer-news-form {
+            display: flex;
+            width: 100%;
+            margin-top: 4px;
+        }
+        .footer-news-form input {
+            flex: 1;
+            padding: 8px 12px;
+            border-radius: 8px 0 0 8px;
+            border: none;
+            font-size: 1em;
+            outline: none;
+        }
+        .footer-news-form button {
+            background: linear-gradient(90deg, #7b2ff2 0%, #fbb034 100%);
+            color: #fff;
+            border: none;
+            border-radius: 0 8px 8px 0;
+            padding: 0 18px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .footer-news-form button:hover {
+            background: linear-gradient(90deg, #fbb034 0%, #7b2ff2 100%);
+        }
+        .footer-bottom {
+            background: #232d3b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 8vw 12px 8vw;
+            border-top: 1px solid #2b3a67;
+            flex-wrap: wrap;
+        }
+        .footer-socials a {
+            color: #fbb034;
+            font-size: 1.3em;
+            margin-right: 18px;
+            transition: color 0.2s;
+        }
+        .footer-socials a:hover {
+            color: #7b2ff2;
+        }
+        .footer-copyright {
+            color: #cfd8e3;
+            font-size: 0.98em;
+            margin-top: 8px;
+        }
+        @media (max-width: 900px) {
+            .footer-top, .footer-links, .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 18px;
+                padding: 24px 4vw 12px 4vw;
+            }
+            .footer-payments {
+                align-items: flex-start;
+            }
+            .footer-links {
+                gap: 24px;
+            }
+        }
+        @media (max-width: 600px) {
+            .footer-logo {
+                width: 44px;
+                height: 44px;
+            }
+            .footer-col {
+                min-width: 90vw;
+                max-width: 98vw;
+            }
+            .footer-links, .footer-top, .footer-bottom {
+                padding: 12px 2vw 8px 2vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <span style="margin-right:auto;color:#bbb;font-size:0.95em;"></span>
+        <a href="main.html" style="font-weight:700;">FR</a>
+        <a href="#" style="font-weight:700;color:#7b2ff2;">ENG</a>
+        <a href="#" class="nav-action" style="font-weight:600;" onclick="window.open('login.html','_blank')">Client Area</a>
+        <a href="#" class="nav-action" onclick="window.open('payment-en.html','_blank')">Payment</a>
+        <a href="#" onclick="window.open('support-en.html','_blank')">Support</a>
+        <a href="#" onclick="window.open('contact-en.html','_blank')">Contact</a>
+    </div>
+    <header class="header">
+        <div class="logo">
+            <div class="logo-card">
+                <img src="logo.jpg" alt="ACADEMY SYSTEM Logo" class="logo-img">
+            </div>
+            <span class="site-title">ACADEMY SYSTEM</span>
+        </div>
+        <nav>
+            <a href="#" onclick="event.preventDefault();document.getElementById('home').scrollIntoView({behavior:'smooth'});">Home</a>
+            <a href="#offers" onclick="event.preventDefault();document.getElementById('offers').scrollIntoView({behavior:'smooth'});">Courses</a>
+            <a href="#testimonials" onclick="event.preventDefault();document.getElementById('testimonials').scrollIntoView({behavior:'smooth'});">About Us</a>
+            <a href="#footer" onclick="event.preventDefault();document.getElementById('footer').scrollIntoView({behavior:'smooth'});">Contact</a>
+            <a href="#" class="promo-link"><i class="fa fa-bolt"></i> Promotions</a>
+        </nav>
+    </header>
+    <div class="assistance-bar" style="background:#2b3a67;color:#fff;text-align:center;padding:14px 0;font-size:1.13em;font-weight:600;letter-spacing:0.5px;">
+      Need assistance? Call us: <span style="background:#fff;color:#2b3a67;padding:4px 14px;border-radius:18px;font-weight:700;margin-left:8px;display:inline-block;">+212 522 50 52 00</span>
+    </div>
+    <div class="promo-bar">
+        <i class="fa fa-gift"></i>
+        <span>SUMMER PROMO | 40% off all certified courses! | <a href="#">See offers</a></span>
+    </div>
+    <section class="hero" id="home">
+        <div class="hero-content" style="display:flex;align-items:center;justify-content:space-between;gap:48px;">
+            <div style="flex:1;">
+                <div class="hero-title">Training and Educational Services Platform</div>
+                <ul class="hero-list">
+                    <li><i class="fas fa-graduation-cap"></i> Access to high-quality, up-to-date certified courses</li>
+                    <li><i class="fas fa-chalkboard-teacher"></i> Experienced instructors and innovative teaching methods</li>
+                    <li><i class="fas fa-laptop-code"></i> Interactive platform and digital resources</li>
+                    <li><i class="fas fa-certificate"></i> Recognized certificates and attestations</li>
+                    <li><i class="fas fa-headset"></i> Personalized support and guidance</li>
+                </ul>
+                <button class="hero-btn hero-btn-main" style="font-size:1.25em;padding:18px 54px;box-shadow:0 4px 24px rgba(123,47,242,0.13);transition:background 0.3s, color 0.2s, transform 0.2s, box-shadow 0.2s;">Découvrir l'Académie</button>
+            </div>
+            <div class="hero-illustration" style="flex:1;display:flex;align-items:center;justify-content:center;">
+                <img src="logo.jpg" alt="Illustration Académie" style="max-width:320px;width:100%;border-radius:24px;box-shadow:0 8px 32px 0 rgba(123,47,242,0.13);background:#fff;" />
+            </div>
+        </div>
+    </section>
+    <section class="pricing-section" id="offers">
+        <h2 class="pricing-title">Our Course Packages</h2>
+        <div class="pricing-comparison" style="overflow-x:auto;margin:32px auto 48px auto;max-width:1100px;">
+          <table style="width:100%;border-collapse:separate;border-spacing:0;background:#fff;border-radius:18px;box-shadow:0 4px 24px 0 rgba(31,38,135,0.10);overflow:hidden;">
+            <thead>
+              <tr style="background:linear-gradient(90deg,#f5f7fa 0%,#e0e7ef 100%);">
+                <th style="padding:18px 8px 18px 18px;text-align:left;font-size:1.08em;color:#222;">Features</th>
+                <th style="padding:18px 8px;color:#2b3a67;font-size:1.15em;">Basic</th>
+                <th style="padding:18px 8px;color:#7b2ff2;font-size:1.15em;">Standard</th>
+                <th style="padding:18px 8px;color:#fbb034;font-size:1.15em;">Premium</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background:#f8fafd;">
+                <td style="padding:12px 8px 12px 18px;">Student Management</td>
+                <td style="text-align:center;">✔️</td>
+                <td style="text-align:center;">✔️</td>
+                <td style="text-align:center;">✔️</td>
+              </tr>
+              <tr>
+                <td style="padding:12px 8px 12px 18px;">Teacher Management</td>
+                <td style="text-align:center;">✔️</td>
+                <td style="text-align:center;">✔️</td>
+                <td style="text-align:center;">✔️</td>
+              </tr>
+              <tr style="background:#f8fafd;">
+                <td style="padding:12px 8px 12px 18px;">Class/Group Management</td>
+                <td style="text-align:center;">✔️</td>
+                <td style="text-align:center;">✔️</td>
+                <td style="text-align:center;">✔️</td>
+              </tr>
+              <tr>
+                <td style="padding:12px 8px 12px 18px;">Student Attendances/Absences</td>
+                <td style="text-align:center;">✔️</td>
+                <td style="text-align:center;">✔️</td>
+                <td style="text-align:center;">✔️</td>
+              </tr>
+              <tr style="background:#f8fafd;">
+                <td style="padding:12px 8px 12px 18px;">Student Notes/Evaluations</td>
+                <td style="text-align:center;">✔️</td>
+                <td style="text-align:center;">✔️</td>
+                <td style="text-align:center;">✔️</td>
+              </tr>
+              <tr>
+                <td style="padding:12px 8px 12px 18px;">Subject Management</td>
+                <td style="text-align:center;">✔️</td>
+                <td style="text-align:center;">✔️</td>
+                <td style="text-align:center;">✔️</td>
+              </tr>
+              <tr style="background:#f8fafd;">
+                <td style="padding:12px 8px 12px 18px;">Simple Dashboard</td>
+                <td style="text-align:center;">✔️</td>
+                <td style="text-align:center;">✔️</td>
+                <td style="text-align:center;">✔️</td>
+              </tr>
+              <tr>
+                <td style="padding:12px 8px 12px 18px;">User/Admin Management</td>
+                <td style="text-align:center;">✔️</td>
+                <td style="text-align:center;">✔️</td>
+                <td style="text-align:center;">✔️</td>
+              </tr>
+              <tr style="background:#f8fafd;">
+                <td style="padding:12px 8px 12px 18px;">Student Inscriptions</td>
+                <td style="text-align:center;">❌</td>
+                <td style="text-align:center;">✔️</td>
+                <td style="text-align:center;">✔️</td>
+              </tr>
+              <tr>
+                <td style="padding:12px 8px 12px 18px;">Teacher Attendances (Salary)</td>
+                <td style="text-align:center;">❌</td>
+                <td style="text-align:center;">✔️</td>
+                <td style="text-align:center;">✔️</td>
+              </tr>
+              <tr style="background:#f8fafd;">
+                <td style="padding:12px 8px 12px 18px;">Student Billing</td>
+                <td style="text-align:center;">❌</td>
+                <td style="text-align:center;">✔️</td>
+                <td style="text-align:center;">✔️</td>
+              </tr>
+              <tr>
+                <td style="padding:12px 8px 12px 18px;">Internal Notifications</td>
+                <td style="text-align:center;">❌</td>
+                <td style="text-align:center;">✔️</td>
+                <td style="text-align:center;">✔️</td>
+              </tr>
+              <tr style="background:#f8fafd;">
+                <td style="padding:12px 8px 12px 18px;">Advanced Searches/Filters</td>
+                <td style="text-align:center;">❌</td>
+                <td style="text-align:center;">✔️</td>
+                <td style="text-align:center;">✔️</td>
+              </tr>
+              <tr>
+                <td style="padding:12px 8px 12px 18px;">Export PDF/Excel</td>
+                <td style="text-align:center;">❌</td>
+                <td style="text-align:center;">✔️</td>
+                <td style="text-align:center;">✔️</td>
+              </tr>
+              <tr style="background:#f8fafd;">
+                <td style="padding:12px 8px 12px 18px;">Reports/Statistics</td>
+                <td style="text-align:center;">❌</td>
+                <td style="text-align:center;">✔️</td>
+                <td style="text-align:center;">✔️</td>
+              </tr>
+              <tr>
+                <td style="padding:12px 8px 12px 18px;">Teacher Billing</td>
+                <td style="text-align:center;">❌</td>
+                <td style="text-align:center;">❌</td>
+                <td style="text-align:center;">✔️</td>
+              </tr>
+              <tr style="background:#f8fafd;">
+                <td style="padding:12px 8px 12px 18px;">Multi-Center Management</td>
+                <td style="text-align:center;">❌</td>
+                <td style="text-align:center;">❌</td>
+                <td style="text-align:center;">✔️</td>
+              </tr>
+              <tr>
+                <td style="padding:12px 8px 12px 18px;">Advanced Settings</td>
+                <td style="text-align:center;">❌</td>
+                <td style="text-align:center;">❌</td>
+                <td style="text-align:center;">✔️</td>
+              </tr>
+              <tr style="background:#f8fafd;">
+                <td style="padding:12px 8px 12px 18px;">Complete History (logs/audit)</td>
+                <td style="text-align:center;">❌</td>
+                <td style="text-align:center;">❌</td>
+                <td style="text-align:center;">✔️</td>
+              </tr>
+              <tr>
+                <td style="padding:12px 8px 12px 18px;">Email/SMS Notifications</td>
+                <td style="text-align:center;">❌</td>
+                <td style="text-align:center;">❌</td>
+                <td style="text-align:center;">✔️</td>
+              </tr>
+              <tr style="background:#f8fafd;">
+                <td style="padding:12px 8px 12px 18px;">API Integration</td>
+                <td style="text-align:center;">❌</td>
+                <td style="text-align:center;">❌</td>
+                <td style="text-align:center;">✔️</td>
+              </tr>
+              <tr>
+                <td style="padding:12px 8px 12px 18px;">Priority Support</td>
+                <td style="text-align:center;">❌</td>
+                <td style="text-align:center;">❌</td>
+                <td style="text-align:center;">✔️</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pricing-cards">
+            <!-- Basic -->
+            <div class="pricing-card">
+                <div class="pricing-header basic">Basic Pack</div>
+                <div class="pricing-desc">Complete management for education centers</div>
+                <div class="pricing-price"><span class="old-price">199€</span> <span class="badge-reduc">-30%</span></div>
+                <div class="pricing-main-price">139€ <span class="per">/month</span></div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check-circle"></i> Student Management</li>
+                    <li><i class="fas fa-chalkboard-teacher"></i> Teacher Management</li>
+                    <li><i class="fas fa-users"></i> Class and Group Management</li>
+                    <li><i class="fas fa-calendar-check"></i> Student Attendances/Absences</li>
+                    <li><i class="fas fa-star"></i> Student Notes/Evaluations</li>
+                    <li><i class="fas fa-book"></i> Subject Management</li>
+                    <li><i class="fas fa-tachometer-alt"></i> Simple Dashboard</li>
+                    <li><i class="fas fa-user-shield"></i> User/Admin Management</li>
+                </ul>
+                <button class="pricing-btn" onclick="window.open('login.html','_blank')">Choose</button>
+            </div>
+            <!-- Pro (Populaire) -->
+            <div class="pricing-card popular">
+                <div class="badge-popular">Popular</div>
+                <div class="pricing-header pro">Standard Pack</div>
+                <div class="pricing-desc">Advanced solution with integrated billing</div>
+                <div class="pricing-price"><span class="old-price">299€</span> <span class="badge-reduc">-40%</span></div>
+                <div class="pricing-main-price">179€ <span class="per">/month</span></div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check-circle"></i> All from Basic Pack</li>
+                    <li><i class="fas fa-user-plus"></i> Inscriptions and History</li>
+                    <li><i class="fas fa-clock"></i> Teacher Attendances</li>
+                    <li><i class="fas fa-file-invoice"></i> Student Billing</li>
+                    <li><i class="fas fa-bell"></i> Internal Notifications</li>
+                    <li><i class="fas fa-search"></i> Advanced Searches</li>
+                    <li><i class="fas fa-download"></i> Export PDF/Excel</li>
+                    <li><i class="fas fa-chart-bar"></i> Reports Statistics</li>
+                </ul>
+                <button class="pricing-btn popular" onclick="window.open('login.html','_blank')">Choose</button>
+            </div>
+            <!-- Premium -->
+            <div class="pricing-card">
+                <div class="pricing-header premium">Premium Pack</div>
+                <div class="pricing-desc">Complete multi-center solution</div>
+                <div class="pricing-price"><span class="old-price">499€</span> <span class="badge-reduc">-50%</span></div>
+                <div class="pricing-main-price">249€ <span class="per">/month</span></div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check-circle"></i> All from Standard Pack</li>
+                    <li><i class="fas fa-money-bill-wave"></i> Teacher Billing</li>
+                    <li><i class="fas fa-building"></i> Multi-Center Management</li>
+                    <li><i class="fas fa-cogs"></i> Advanced Settings</li>
+                    <li><i class="fas fa-history"></i> Complete History</li>
+                    <li><i class="fas fa-envelope"></i> Email/SMS Notifications</li>
+                    <li><i class="fas fa-plug"></i> API Integration</li>
+                    <li><i class="fas fa-headset"></i> Priority Support</li>
+                </ul>
+                <button class="pricing-btn" onclick="window.open('login.html','_blank')">Choose</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section" id="testimonials">
+        <h2 class="testimonials-title">They trust us</h2>
+        <div class="testimonials-cards">
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar" style="background:#7b2ff2;">Z</div>
+                    <div>
+                        <div class="testimonial-name">Zakaria Toura</div>
+                        <div class="testimonial-date">07/11/2024</div>
+                    </div>Je veux aussi une place dans le siteweb qui donner les centres 
+                   
+                </div>
+                <div class="testimonial-stars">★★★★★</div>
+                <div class="testimonial-text">Service exceptionnel ! Plateforme intuitive, support réactif et formateurs passionnés. Je recommande vivement ACADEMY SYSTEM !</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar" style="background:#fbb034;">A</div>
+                    <div>
+                        <div class="testimonial-name">Aya Errabhi</div>
+                        <div class="testimonial-date">07/12/2023</div>
+                    </div>
+                   
+                </div>
+                <div class="testimonial-stars">★★★★★</div>
+                <div class="testimonial-text">Une équipe à l'écoute, des cours de qualité et une vraie progression. Merci à toute l'équipe !</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar" style="background:#2b3a67;">R</div>
+                    <div>
+                        <div class="testimonial-name">Rayan Arabi</div>
+                        <div class="testimonial-date">29/06/2022</div>
+                    </div>
+                    
+                </div>
+                <div class="testimonial-stars">★★★★★</div>
+                <div class="testimonial-text">La meilleure plateforme de formation, une équipe motivée et des contenus toujours à jour.</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar" style="background:#f50087;">R</div>
+                    <div>
+                        <div class="testimonial-name">Reda El Kouaze</div>
+                        <div class="testimonial-date">05/10/2021</div>
+                    </div>
+                   
+                </div>
+                <div class="testimonial-stars">★★★★★</div>
+                <div class="testimonial-text">Un accompagnement personnalisé et des résultats concrets. Je recommande sans hésiter !</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners-section">
+      <h2 class="partners-title">Our Language Centers Partners</h2>
+      <p class="partners-desc">We thank our partner centers for their trust and collaboration. Thanks to our service, they were able to enrich their educational offer and accompany their students even better in Tétouan.</p>
+      <div class="partners-cards">
+        <div class="partner-card">
+          <img src="clf.png" alt="Centre de Langue Française" class="partner-logo">
+          <div class="partner-name">Centre de Langue Française</div>
+          <div class="partner-city">Tétouan</div>
+        </div>
+        <div class="partner-card">
+          <img src="dar.png" alt="Dar Loughta" class="partner-logo">
+          <div class="partner-name">Dar Loughta</div>
+          <div class="partner-city">Tétouan</div>
+        </div>
+        <div class="partner-card">
+          <img src="institut.png" alt="Institut de Français" class="partner-logo">
+          <div class="partner-name">Institut de Français</div>
+          <div class="partner-city">Tétouan</div>
+        </div>
+        <div class="partner-card">
+          <img src="vocalo.png" alt="Vocalo" class="partner-logo">
+          <div class="partner-name">Vocalo</div>
+          <div class="partner-city">Tétouan</div>
+        </div>
+      </div>
+    </section>
+    <!-- F.A.Q. Section -->
+    <section class="faq-section" style="background:#f8fafd;padding:60px 0 40px 0;text-align:center;">
+      <h2 style="font-size:2em;color:#2b3a67;font-weight:700;margin-bottom:38px;letter-spacing:1px;">F.A.Q</h2>
+      <div style="max-width:900px;margin:0 auto;text-align:left;">
+        <div style="margin-bottom:32px;">
+          <div style="font-weight:700;font-size:1.13em;color:#7b2ff2;margin-bottom:6px;">What is ACADEMY SYSTEM&nbsp;?</div>
+          <div style="color:#333;font-size:1.05em;">ACADEMY SYSTEM is a platform for education management and training dedicated to educational centers, allowing you to manage students, teachers, classes, attendances, notes, billing and more, all online.</div>
+        </div>
+        <div style="margin-bottom:32px;">
+          <div style="font-weight:700;font-size:1.13em;color:#7b2ff2;margin-bottom:6px;">How to register for a training&nbsp;?</div>
+          <div style="color:#333;font-size:1.05em;">Click on the "Explore the Academy" button or go to the Formations section, then follow the instructions to create your account and choose your pack.</div>
+        </div>
+        <div style="margin-bottom:32px;">
+          <div style="font-weight:700;font-size:1.13em;color:#7b2ff2;margin-bottom:6px;">What are the payment methods accepted&nbsp;?</div>
+          <div style="color:#333;font-size:1.05em;">We accept payments by credit card (Visa, Mastercard, Amex), PayPal, Apple Pay, Amazon Pay and bank transfer.</div>
+        </div>
+        <div style="margin-bottom:32px;">
+          <div style="font-weight:700;font-size:1.13em;color:#7b2ff2;margin-bottom:6px;">Can I access my courses at any time&nbsp;?</div>
+          <div style="color:#333;font-size:1.05em;">Yes, the platform is accessible 24h/24 and 7j/7 from any connected device to the Internet.</div>
+        </div>
+        <div style="margin-bottom:32px;">
+          <div style="font-weight:700;font-size:1.13em;color:#7b2ff2;margin-bottom:6px;">Are the certificates recognized&nbsp;?</div>
+          <div style="color:#333;font-size:1.05em;">Yes, our certificates are recognized by our partner centers and attest to the follow-up and success of your training.</div>
+        </div>
+        <div style="margin-bottom:32px;">
+          <div style="font-weight:700;font-size:1.13em;color:#7b2ff2;margin-bottom:6px;">How to contact support&nbsp;?</div>
+          <div style="color:#333;font-size:1.05em;">You can contact us via the Support section, by email at academiesystem@gmail.com or via the contact form on the site.</div>
+        </div>
+        <div style="margin-bottom:32px;">
+          <div style="font-weight:700;font-size:1.13em;color:#7b2ff2;margin-bottom:6px;">Can I change my pack later&nbsp;?</div>
+          <div style="color:#333;font-size:1.05em;">Yes, it is possible to switch to a higher pack at any time from your member space.</div>
+        </div>
+        <div style="margin-bottom:0;">
+          <div style="font-weight:700;font-size:1.13em;color:#7b2ff2;margin-bottom:6px;">Do you offer discounts for groups or companies&nbsp;?</div>
+          <div style="color:#333;font-size:1.05em;">Yes, special offers are available for groups, schools or companies. Contact us for a personalized quote.</div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer-main" id="footer">
+      <div class="footer-top">
+        <div class="footer-legal">
+          <img src="logo.jpg" alt="Logo ACADEMY SYSTEM" class="footer-logo">
+          <div class="footer-legal-text">
+            <div>ACADEMY SYSTEM - Tétouan, Maroc</div>
+            <div>Email : academiesystem@gmail.com</div>
+          </div>
+        </div>
+        <div class="footer-payments">
+          <span>Accepted Payments :</span>
+          <div class="footer-pay-icons">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-amex"></i>
+            <i class="fab fa-cc-paypal"></i>
+            <i class="fab fa-cc-apple-pay"></i>
+            <i class="fab fa-cc-amazon-pay"></i>
+          </div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <div class="footer-title">THE ACADEMY</div>
+          <a href="#">Accueil</a>
+          <a href="#">À propos</a>
+          <a href="#">Formations</a>
+          <a href="#">Témoignages</a>
+          <a href="#">Centres partenaires</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-title">PRACTICE</div>
+          <a href="#">Support</a>
+          <a href="#">Paiement</a>
+          <a href="#">Promotions</a>
+          <a href="#">Glossaire</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-title">SERVICES</div>
+          <a href="#">Coaching</a>
+          <a href="#">Certifications</a>
+          <a href="#">E-learning</a>
+          <a href="#">Ressources</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-title">MEMBER SPACE</div>
+          <a href="#">Connexion</a>
+          <a href="#">Inscription</a>
+          <a href="#">Espace personnel</a>
+        </div>
+        <div class="footer-col newsletter-col">
+          <div class="footer-title">NEWSLETTER</div>
+          <div class="footer-news-desc">Receive our news and exclusive offers :</div>
+          <form class="footer-news-form" onsubmit="return false;">
+            <input type="email" placeholder="Votre email" required>
+            <button type="submit"><i class="fa fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-socials">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="footer-copyright">
+          &copy; 2025 ACADEMY SYSTEM. All rights reserved.
+        </div>
+      </div>
+    </footer>
+    <script>
+    // Scroll to offres on hero-btn click
+    document.addEventListener('DOMContentLoaded', function() {
+        var btn = document.querySelector('.hero-btn');
+        if(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('offers').scrollIntoView({behavior: 'smooth'});
+            });
+        }
+    });
+    function scrollToOffresWithOffset() {
+      var offres = document.getElementById('offers');
+      var header = document.querySelector('.header');
+      if(offres) {
+        var y = offres.getBoundingClientRect().top + window.pageYOffset;
+        var offset = header ? header.offsetHeight + 10 : 70; 
+        window.scrollTo({top: y - offset, behavior: 'smooth'});
+      }
+    }
+    </script>
+</body>
+</html>
